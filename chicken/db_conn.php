@@ -12,7 +12,7 @@ $conn = @mysqli_connect($host, $user, $pw, $dbName);
 if ($conn) {
     echo "<h3>RDS 접속 성공!</h3>";
     echo "데이터베이스 [" . $dbName . "]에 안정적으로 연결되었습니다.<br>";
-    echo "<br> <a href='main.html'> <--초기 화면으로 돌아가기</a> ";
+    echo "<br> <a href='main1.html'> <--초기 화면으로 돌아가기</a> ";
     
     mysqli_close($conn);
 } else {
@@ -24,4 +24,5 @@ if ($conn) {
 }
 
 ?>
+
 
