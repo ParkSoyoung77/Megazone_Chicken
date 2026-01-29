@@ -1,5 +1,7 @@
 <?php
 include "db_conn.php";
+include "log_to_file.php";
+write_file_log("장바구니 추가: $pName ($pPrice 원)");
 session_start();
 
 // 1. 로그인 여부 확인
@@ -22,4 +24,5 @@ if (mysqli_query($conn, $sql)) {
 } else {
     echo "장바구니 담기 실패: " . mysqli_error($conn);
 }
+
 ?>
