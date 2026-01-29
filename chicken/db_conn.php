@@ -8,10 +8,6 @@ $dbName = "Megazone_Chicken";
 $conn = @mysqli_connect($host, $user, $pw, $dbName);
 
 if ($conn) {
-    echo "접속 성공! 데이터베이스 [" . $dbName . "]에 연결되었습니다.<br>";
-    
-    $userID = $_GET['userID'];
-    $sql = "SELECT * FROM Customer WHERE user_id = '" . $userID . "'";
     $ret = mysqli_query($conn, $sql);
     
     if($ret) {
@@ -25,3 +21,4 @@ if ($conn) {
     echo "<br> <a href='main.html'> <--초기 화면</a> ";
     exit();
 }
+
