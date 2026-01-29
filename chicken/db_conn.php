@@ -1,17 +1,23 @@
 <?php
 // 1. RDS 접속 정보 설정
-$host = "chickendb.c1yq4myeord7.ap-northeast-2.rds.amazonaws.com"; 
+$host = trim("chickendb.c1yq4myeord7.ap-northeast-2.rds.amazonaws.com");
 $user = "admin";
 $pw = "qwe12345";
-$dbName = "Megazone_Chicken"; // 데이터베이스 이름
+$dbName = "Megazone_Chicken";
 
-// 2. MariaDB(MySQL) 접속
-$conn = mysqli_connect($host, $user, $pw, $dbName);
+// 에러 핸들링을 더 상세하게 출력하도록 설정
+mysqli_report(MYSQLI_REPORT_OFF); 
+$conn = @mysqli_connect($host, $user, $pw, $dbName);
 
-// 접속 실패 시 에러 출력 및 종료
 if (!$conn) {
-    die("MariaDB 접속 실패 !! : " . mysqli_connect_error());
+    echo "<h3>RDS 연결 오류 발생</h3>";
+    echo "에러 번호: " . mysqli_connect_errno() . "<br>";
+    echo "에러 내용: " . mysqli_connect_error() . "<br>";
+    exit();
 }
+
+echo "접속 성공! 데이터베이스 [" . $dbName . "]에 연결되었습니다.";
+?>
 
 // 3. SQL 쿼리 작성 (회원 테이블에서 아이디 조회)
 // 이전에 생성한 테이블명이 Customer이고 아이디 컬럼이 user_id였으므로 그에 맞춰 수정했습니다.
@@ -42,3 +48,4 @@ if($ret) {
 // 연결 종료 (선택 사항)
 mysqli_close($conn);
 ?>
+
