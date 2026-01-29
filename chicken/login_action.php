@@ -1,5 +1,7 @@
 <?php
-include "db_conn.php"; 
+include "db_conn.php";
+include "log_to_file.php";
+write_file_log("사용자 [$userId] 로그인 성공");
 session_start();
 
 $userId = $_POST['userId'];
@@ -22,4 +24,5 @@ if (mysqli_num_rows($result) > 0) {
 } else {
     echo "<script>alert('없는 아이디입니다.'); history.back();</script>";
 }
+
 ?>
