@@ -3,7 +3,7 @@ include "db_conn.php";
 
 $userId = $_POST['userId'];
 $userPw = password_hash($_POST['userPw'], PASSWORD_DEFAULT); // 암호화
-$userName = $_POST['userName'];
+$userName = $_POST['name'];
 $address = $_POST['address'];
 $phone = $_POST['phone'];
 
@@ -14,4 +14,5 @@ if (mysqli_query($conn, $sql)) {
 } else {
     echo "에러: " . mysqli_error($conn);
 }
+
 ?>
