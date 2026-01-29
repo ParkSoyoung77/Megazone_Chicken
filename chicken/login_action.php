@@ -1,7 +1,6 @@
 <?php
 include "db_conn.php";
 include "log_to_file.php";
-write_file_log("사용자 [$userId] 로그인 성공");
 session_start();
 
 $userId = $_POST['userId'];
@@ -26,3 +25,4 @@ if (mysqli_num_rows($result) > 0) {
 }
 
 ?>
+
