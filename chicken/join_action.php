@@ -1,7 +1,7 @@
 <?php
 include "db_conn.php";
 
-$userId = $_POST['userId'];
+$userId = $_POST['user_id'];
 $userPw = password_hash($_POST['userPw'], PASSWORD_DEFAULT); // 암호화
 $userName = $_POST['name'];
 $address = $_POST['address'];
@@ -16,3 +16,4 @@ if (mysqli_query($conn, $sql)) {
 }
 
 ?>
+
