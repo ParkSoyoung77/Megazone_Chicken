@@ -5,18 +5,23 @@ $user = "admin";
 $pw = "qwe12345";
 $dbName = "Megazone_Chicken";
 
-
-mysqli_report(MYSQLI_REPORT_OFF); 
 $conn = @mysqli_connect($host, $user, $pw, $dbName);
 
-if (!$conn) {
+if ($conn) {
+    echo "접속 성공! 데이터베이스 [" . $dbName . "]에 연결되었습니다.<br>";
+    
+    $userID = $_GET['userID'];
+    $sql = "SELECT * FROM Customer WHERE user_id = '" . $userID . "'";
+    $ret = mysqli_query($conn, $sql);
+    
+    if($ret) {
+        $count = mysqli_num_rows($ret);
+        echo "접속 성공! 데이터베이스 [" . $dbName . "]에 연결되었습니다.";
+    }
+} else {
     echo "<h3>RDS 연결 오류 발생</h3>";
     echo "에러 번호: " . mysqli_connect_errno() . "<br>";
     echo "에러 내용: " . mysqli_connect_error() . "<br>";
+    echo "<br> <a href='main.html'> <--초기 화면</a> ";
     exit();
 }
-
-echo "접속 성공! 데이터베이스 [" . $dbName . "]에 연결되었습니다.";
-?>
-
-
