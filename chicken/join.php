@@ -81,11 +81,12 @@
     <tr><td>주소</td></tr>
     <tr><td><input type="text" class="text"></td></tr>
     <tr><td>전화번호</td></tr>
-    <tr><td><input type="number" class="text"></td></tr>
+    <tr><td><input type="text" class="text"></td></tr>
         </td>
     </tr>
     <tr><td><input type="submit" value="가입하기" class="btn" onclick="alert('가입 성공!')"></td></tr>
     </table>
 </form>
 </body>
+
 </html>
