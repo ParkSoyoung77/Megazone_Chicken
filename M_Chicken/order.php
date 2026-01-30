@@ -1,6 +1,12 @@
 <?php
 include "db_conn.php";
 session_start();
+
+if (!isset($_SESSION['user_id'])) {
+    echo "<script>alert('로그인이 필요합니다.'); location.href='login.php';</script>";
+    exit;
+}
+
 $cart = isset($_SESSION['cart']) ? $_SESSION['cart'] : [];
 ?>
 <!DOCTYPE html>
@@ -56,3 +62,4 @@ $cart = isset($_SESSION['cart']) ? $_SESSION['cart'] : [];
 </body>
 
 </html>
+
