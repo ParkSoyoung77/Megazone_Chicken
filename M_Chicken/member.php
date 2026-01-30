@@ -49,17 +49,17 @@ if ($result && mysqli_num_rows($result) > 0) {
             <tr><td><input type="text" name="user_id" class="text" value="<?php echo htmlspecialchars($row['user_id'] ?? ''); ?>" readonly></td></tr>
             
             <tr><td>이름</td></tr>
-            <tr><td><input type="text" name="name" class="text" value="<?php echo htmlspecialchars($row['name'] ?? ''); ?>"></td></tr>
+            <tr><td><input type="text" name="name" class="text" value="<?php echo htmlspecialchars($row['name'] ?? ''); ?>" readonly></td></tr>
 
             <tr><td>보유 쿠폰</td></tr>
             <tr><td><input type="text" class="text" value="<?php echo htmlspecialchars($row['coupon_name'] ?? '없음'); ?>" readonly 
              style="color: blue; font-weight: bold; background-color: #f0f8ff;"></td></tr>
             
             <tr><td>주소</td></tr>
-            <tr><td><input type="text" name="address" class="text" value="<?php echo htmlspecialchars($row['address'] ?? ''); ?>"></td></tr>
+            <tr><td><input type="text" name="address" class="text" value="<?php echo htmlspecialchars($row['address'] ?? ''); ?>" readonly></td></tr>
             
             <tr><td>전화번호</td></tr>
-            <tr><td><input type="text" name="phone" class="text" value="<?php echo htmlspecialchars($row['phone'] ?? ''); ?>"></td></tr>
+            <tr><td><input type="text" name="phone" class="text" value="<?php echo htmlspecialchars($row['phone'] ?? ''); ?>" readonly></td></tr>
             
             <tr><td><input type="submit" value="정보 수정하기" class="btn"></td></tr>
             <tr><td><input type="button" value="로그아웃" class="btn btn-logout" onclick="location.href='logout.php'"></td></tr>
@@ -67,4 +67,5 @@ if ($result && mysqli_num_rows($result) > 0) {
         </table>
     </form>
 </body>
+
 </html>
