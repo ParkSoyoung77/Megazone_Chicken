@@ -50,7 +50,7 @@
         border-radius: 15px;
         outline: none;
         padding-left: 10px;
-        background-color: rgb(164, 199, 255);
+        background-color: rgb(255, 150, 100);
     }
     .btn:active {
         width: 262px;
@@ -60,7 +60,7 @@
         border-radius: 15px;
         outline: none;
         padding-left: 10px;
-        background-color: rgb(61, 135, 255);
+        background-color: rgb(255, 100, 50);
     }
 </style>
 </head>
@@ -84,5 +84,6 @@
     </table>
 </form>
 </body>
+
 
 </html>
