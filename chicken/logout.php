@@ -4,8 +4,8 @@ include "log_to_file.php"; // 로그 기록 함수를 사용하기 위해 포함
 
 // 1. 로그 기록 (선택 사항)
 // login_action.php에서 사용한 로그 형식을 유지하여 로그아웃 기록을 남깁니다.
-if (isset($_SESSION['userId'])) {
-    write_file_log("사용자 [" . $_SESSION['userId'] . "] 로그아웃 성공");
+if (isset($_SESSION['user_id'])) {
+    write_file_log("사용자 [" . $_SESSION['user_id'] . "] 로그아웃 성공");
 }
 
 // 2. 모든 세션 변수 해제

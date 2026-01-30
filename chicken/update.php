@@ -3,15 +3,15 @@ include "db_conn.php";
 session_start();
 
 // 1. 로그인 여부 확인
-if (!isset($_SESSION['userId'])) {
+if (!isset($_SESSION['user_id'])) {
     echo "<script>alert('로그인이 필요합니다.'); location.href='login.php';</script>";
     exit;
 }
 
-$userId = $_SESSION['userId'];
+$user_id = $_SESSION['user_id'];
 
 // 2. RDS에서 현재 로그인한 회원의 정보 가져오기
-$sql = "SELECT * FROM members WHERE id = '$userId'";
+$sql = "SELECT * FROM Customer WHERE user_id = '$user_id'";
 $result = mysqli_query($conn, $sql);
 $row = mysqli_fetch_assoc($result);
 
@@ -45,10 +45,10 @@ if (!$row) {
         <table>
             <tr><td><h2>내 정보 확인</h2></td></tr>
             <tr><td>아이디</td></tr>
-            <tr><td><input type="text" name="userId" class="text" value="<?php echo $row['id']; ?>" readonly></td></tr>
+            <tr><td><input type="text" name="user_id" class="text" value="<?php echo $row['user_id']; ?>" readonly></td></tr>
             
             <tr><td>이름</td></tr>
-            <tr><td><input type="text" name="userName" class="text" value="<?php echo $row['name']; ?>"></td></tr>
+            <tr><td><input type="text" name="name" class="text" value="<?php echo $row['name']; ?>"></td></tr>
             
             <tr><td>주소</td></tr>
             <tr><td><input type="text" name="address" class="text" value="<?php echo $row['address']; ?>"></td></tr>
@@ -57,7 +57,7 @@ if (!$row) {
             <tr><td><input type="text" name="phone" class="text" value="<?php echo $row['phone']; ?>"></td></tr>
             
             <tr><td><input type="submit" value="정보 수정하기" class="btn"></td></tr>
-            <tr><td style="text-align:center; padding-top:10px;"><a href="main.php" style="font-size:12px; color:gray; text-decoration:none;">메인으로 돌아가기</a></td></tr>
+            <tr><td style="text-align:center; padding-top:10px;"><a href="main1.html" style="font-size:12px; color:gray; text-decoration:none;">메인으로 돌아가기</a></td></tr>
         </table>
     </form>
 </body>

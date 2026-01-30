@@ -11,11 +11,11 @@ if (!isset($_SESSION['user_id'])) {
 
 // 2. 전달받은 상품 정보 가져오기
 $user_id = $_SESSION['user_id'];
-$pName = $_GET['name'];
+$pName = $_GET['product_name'];
 $pPrice = $_GET['price'];
 
 // 3. RDS 장바구니 테이블에 저장
-$sql = "INSERT INTO cart (user_id, product_name, price) VALUES ('$userId', '$pName', '$pPrice')";
+$sql = "INSERT INTO Orders (user_id, product_name, price) VALUES ('$user_id', '$pName', '$pPrice')";
 
 if (mysqli_query($conn, $sql)) {
     // 저장 성공 시 장바구니 목록 페이지(cart_list.php)로 이동

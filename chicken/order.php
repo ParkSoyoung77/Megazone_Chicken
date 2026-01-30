@@ -3,7 +3,7 @@ include "db_conn.php";
 session_start();
 
 $user_id = $_SESSION['user_id'];
-$sql = "SELECT * FROM cart WHERE user_id = '$user_id' ORDER BY reg_date DESC";
+$sql = "SELECT * FROM orders WHERE user_id = '$user_id' ORDER BY reg_date DESC";
 $result = mysqli_query($conn, $sql);
 ?>
 

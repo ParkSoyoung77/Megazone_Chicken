@@ -4,20 +4,20 @@ include "db_conn.php"; //
 include "log_to_file.php"; //
 
 // 1. 로그인 여부 확인
-if (!isset($_SESSION['userId'])) {
+if (!isset($_SESSION['user_id'])) {
     echo "<script>alert('로그인이 필요한 서비스입니다.'); location.href='login.php';</script>";
     exit;
 }
 
-$userId = $_SESSION['userId']; //
+$user_id = $_SESSION['user_id']; //
 
 // 2. 데이터베이스에서 회원 삭제 (Customer 테이블)
 // SQL문: 테이블명 Customer, 컬럼명 user_id
-$sql = "DELETE FROM Customer WHERE user_id = '$userId'";
+$sql = "DELETE FROM Customer WHERE user_id = '$user_id'";
 
 if (mysqli_query($conn, $sql)) { //
     // 3. 로그 기록
-    write_file_log("사용자 [$userId] 회원 탈퇴 완료"); //
+    write_file_log("사용자 [$user_id] 회원 탈퇴 완료"); //
 
     // 4. 세션 파괴 및 정리 (로그아웃과 동일 과정)
     $_SESSION = array();
