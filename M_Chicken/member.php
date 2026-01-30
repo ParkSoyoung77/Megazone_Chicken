@@ -37,7 +37,7 @@ if ($result && mysqli_num_rows($result) > 0) {
         }
         .btn {
             width: 262px; height: 32px; border: 0; border-radius: 15px;
-            background-color: rgb(164, 199, 255); cursor: pointer;
+            background-color: rgb(255, 150, 100); cursor: pointer;
         }
     </style>
 </head>
@@ -69,3 +69,4 @@ if ($result && mysqli_num_rows($result) > 0) {
 </body>
 
 </html>
+
