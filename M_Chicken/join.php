@@ -63,6 +63,14 @@
         background-color: rgb(255, 100, 50);
     }
 </style>
+<script>
+const autoHyphen = (target) => {
+    target.value = target.value
+        .replace(/[^0-9]/g, '')
+        .replace(/^(\d{0,3})(\d{0,4})(\d{0,4})$/g, "$1-$2-$3")
+        .replace(/(\-{1,2})$/g, "");
+}
+</script>
 </head>
 <body>
 <form action="join_action.php" method="POST">
@@ -77,7 +85,7 @@
     <tr><td>주소</td></tr>
     <tr><td><input type="text" name="address" class="text"></td></tr>
     <tr><td>전화번호</td></tr>
-    <tr><td><input type="text" name="phone" class="text"></td></tr>
+    <tr><td><input type="text" name="phone" class="text" oninput="autoHyphen(this)" maxlength="13"></td></tr>
         </td>
     </tr>
     <tr><td><input type="submit" value="가입하기" class="btn" onclick="alert('가입 성공!')"></td></tr>
@@ -87,3 +95,4 @@
 
 
 </html>
+
