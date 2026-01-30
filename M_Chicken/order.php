@@ -16,7 +16,7 @@ $cart = isset($_SESSION['cart']) ? $_SESSION['cart'] : [];
         .btn-qty { padding: 5px 10px; cursor: pointer; border: 1px solid #ccc; background: #fff; margin: 0 5px; border-radius: 3px; }
         .btn-del { padding: 5px 10px; cursor: pointer; border: none; background: #ff4d4d; color: white; border-radius: 3px; margin-left: 10px; }
         .total-price { text-align: right; font-size: 1.5rem; font-weight: bold; margin-top: 20px; color: #3C1D0E; }
-        .checkout-btn { width: 100%; padding: 15px; background: #3C1D0E; color: white; border: none; cursor: pointer; font-size: 1.1rem; border-radius: 5px; }
+        .checkout-btn { width: 100%; padding: 15px; background: #ff9664; color: white; border: none; cursor: pointer; font-size: 1.1rem; border-radius: 5px; }
     </style>
 </head>
 <body>
@@ -54,4 +54,5 @@ $cart = isset($_SESSION['cart']) ? $_SESSION['cart'] : [];
     <br><a href="main1.html" style="text-decoration: none; color: #666;">← 쇼핑 계속하기</a>
 </div>
 </body>
+
 </html>
