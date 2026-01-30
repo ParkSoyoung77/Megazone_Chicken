@@ -20,10 +20,10 @@
             border-radius: 15px;
             outline: none;
             cursor: pointer;
-            background-color: rgb(164, 199, 255);
+            background-color: rgb(255, 150, 100);
         }
         .btn:active {
-            background-color: rgb(61, 135, 255);
+            background-color: rgb(255, 100, 50);
         }
         a {
             font-size: 12px;
@@ -56,4 +56,5 @@
         </table>
     </form>
 </body>
+
 </html>
