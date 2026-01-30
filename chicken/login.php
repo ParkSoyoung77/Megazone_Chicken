@@ -11,16 +11,7 @@
             margin: auto;
             font-size: 15px;
         }
-        input[type="text"], input[type="password"] {
-            width: 250px;
-            height: 32px;
-            font-size: 15px;
-            border: 0;
-            border-radius: 15px;
-            outline: none;
-            padding-left: 10px;
-            background-color: rgb(233,233,233);
-        }
+
         .btn {
             width: 263px;
             height: 32px;
@@ -51,10 +42,7 @@
                 <td><h2>로그인</h2></td>
             </tr>
             <tr>
-                <td><input type="text" name="userId" placeholder="ID" required></td>
-            </tr>
-            <tr>
-                <td><input type="password" name="userPw" placeholder="Password" required></td>
+                <td><input type="text" name="user_id" placeholder="ID" required></td>
             </tr>
             <tr>
                <td><input type="checkbox"> 로그인 정보 저장</td>

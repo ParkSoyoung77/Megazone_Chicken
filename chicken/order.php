@@ -2,8 +2,8 @@
 include "db_conn.php";
 session_start();
 
-$userId = $_SESSION['userId'];
-$sql = "SELECT * FROM cart WHERE user_id = '$userId' ORDER BY reg_date DESC";
+$user_id = $_SESSION['user_id'];
+$sql = "SELECT * FROM cart WHERE user_id = '$user_id' ORDER BY reg_date DESC";
 $result = mysqli_query($conn, $sql);
 ?>
 
@@ -17,7 +17,7 @@ $result = mysqli_query($conn, $sql);
     </style>
 </head>
 <body>
-    <h2>🛒 <?php echo $_SESSION['userName']; ?>님의 장바구니</h2>
+    <h2>🛒 <?php echo $_SESSION['name']; ?>님의 장바구니</h2>
     
     <?php if (mysqli_num_rows($result) > 0) { 
         $total = 0;

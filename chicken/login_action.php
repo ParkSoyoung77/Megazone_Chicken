@@ -1,28 +1,23 @@
 <?php
-include "db_conn.php";
-include "log_to_file.php";
 session_start();
+include "db_conn.php";
 
-$userId = $_POST['userId'];
-$userPw = $_POST['userPw'];
+$user_id = $_POST['user_id'];
 
-$sql = "SELECT * FROM members WHERE id = '$userId'";
+// 비밀번호(userPw)를 받긴 하지만, 쿼리나 검증에는 사용하지 않습니다.
+// 보내주신 테이블 설계에 맞춰 Customer 테이블의 user_id 컬럼을 조회합니다.
+$sql = "SELECT * FROM Customer WHERE user_id = '$user_id'"; 
 $result = mysqli_query($conn, $sql);
 
-if (mysqli_num_rows($result) > 0) {
+if ($result && mysqli_num_rows($result) > 0) {
     $row = mysqli_fetch_assoc($result);
-    $hashPw = $row['password']; 
-
-    if (password_verify($userPw, $hashPw)) {
-        $_SESSION['userId'] = $row['id']; 
-        $_SESSION['userName'] = $row['name'];
-        echo "<script>alert('로그인 성공!'); location.href='main.php';</script>";
-    } else {
-        echo "<script>alert('정보가 일치하지 않습니다.'); history.back();</script>";
-    }
+    
+    // 비밀번호 검증 과정 없이 바로 로그인 성공 처리
+    $_SESSION['user_id'] = $row['user_id']; 
+    $_SESSION['name'] = $row['name'];
+    
+    echo "<script>alert('아이디 인증으로 로그인되었습니다.'); location.href='main1.html';</script>";
 } else {
-    echo "<script>alert('없는 아이디입니다.'); history.back();</script>";
+    echo "<script>alert('존재하지 않는 아이디입니다.'); history.back();</script>";
 }
-
 ?>
-

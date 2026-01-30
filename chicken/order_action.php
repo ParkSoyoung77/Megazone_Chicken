@@ -4,13 +4,13 @@ include "log_to_file.php";
 session_start();
 
 // 1. 로그인 여부 확인
-if (!isset($_SESSION['userId'])) {
+if (!isset($_SESSION['user_id'])) {
     echo "<script>alert('로그인이 필요한 서비스입니다.'); location.href='login.php';</script>";
     exit;
 }
 
 // 2. 전달받은 상품 정보 가져오기
-$userId = $_SESSION['userId'];
+$user_id = $_SESSION['user_id'];
 $pName = $_GET['name'];
 $pPrice = $_GET['price'];
 
@@ -23,6 +23,4 @@ if (mysqli_query($conn, $sql)) {
 } else {
     echo "장바구니 담기 실패: " . mysqli_error($conn);
 }
-
 ?>
-

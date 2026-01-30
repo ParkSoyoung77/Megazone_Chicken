@@ -65,23 +65,19 @@
 </style>
 </head>
 <body>
-<form action="login.php">
+<form action="join_action.php" method="POST">
     <table>
     <tr>
         <td><h2>회원가입</h2></td>
     </tr>
     <tr><td>아이디</td></tr>
-    <tr><td><input type="text" class="text"></td></tr>
-    <tr><td>비밀번호</td></tr>
-    <tr><td><input type="password" class="text"></td></tr>
-    <tr><td>비밀번호 확인</td></tr>
-    <tr><td><input type="password" class="text"></td></tr>
+    <tr><td><input type="text" name="user_id" class="text"></td></tr>
     <tr><td>이름</td></tr>
-    <tr><td><input type="text" class="text"></td></tr>
+    <tr><td><input type="text" name="name" class="text"></td></tr>
     <tr><td>주소</td></tr>
-    <tr><td><input type="text" class="text"></td></tr>
+    <tr><td><input type="text" name="address" class="text"></td></tr>
     <tr><td>전화번호</td></tr>
-    <tr><td><input type="text" class="text"></td></tr>
+    <tr><td><input type="text" name="phone" class="text"></td></tr>
         </td>
     </tr>
     <tr><td><input type="submit" value="가입하기" class="btn" onclick="alert('가입 성공!')"></td></tr>

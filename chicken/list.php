@@ -1,9 +1,11 @@
-<?php include "../db.php"; ?>
+<?php 
+include "db_conn.php"; 
+?>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="utf-8" />
-<title>쇼핑몰 장바구니 예제</title>
+<title>쇼핑몰 장바구니</title>
 <link rel="stylesheet" type="text/css" href="/css/common.css" />
 </head>
 <body>
